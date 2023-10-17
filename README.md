@@ -22,3 +22,16 @@
 
 - Spring sử dụng Factory Method Pattern làm cốt lõi của Dependency Injection (DI)
 - Spring định nghĩa interface "Bean Factory" là 1 container chứa các beans
+- Mỗi phương thức getBean từ applicationContext được hiểu như là một factoryMethod, Factory này trả về bean theo tên hoặc tên class của Bean
+- Ví dụ: 
+  ```java
+  BasicBean basicBean = applicationContext.getBean(BasicBean.class);
+  System.out.println(basicBean);
+  ```
+- Ngoài việc get Beans từ Application Context này ra thì còn có thể đọc từ nhiều file ClassPathXmlApplicationContext
+- Ví dụ :
+  ```java
+    
+    ApplicationContext context_1 = new ClassPathXmlApplicationContext("context_1.xml");
+    ApplicationContext context_2 = new ClassPathXmlApplicationContext("context_2.xml");
+  ```
